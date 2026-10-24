@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>personal blog</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../">首页</a>
+            <a href="../archive.html">归档</a>
+            <a href="../about.html">关于</a>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+    <header>
+        <h1>The First Time you met Haskell</h1>
+        <!-- The First Time you met Haskell 来自 Markdown 文件开头的 YAML front matter -->
+        <time datetime="2026-10-24">2026-10-24</time>
+        <!-- 2026-10-24 来自 site.hs 中 dateField 的定义 -->
+    </header>
+
+    <ol type="1">
+<li>笛卡尔积 是两个集合组成的有序数对
+X×Y={(x,y)∣x∈X, y∈Y}</li>
+</ol>
+<p>∀ (x, y) ∈ f, ∀ (u, v) ∈ f, x = u =&gt; y == v 唯一性</p>
+<ol start="2" type="1">
+<li><p>在 Haskell 中，“类型” 和 “集合” 是同义词</p></li>
+<li><p>g * f == g after f 右往左</p></li>
+<li><p>函数可以建模 “变换” 和 “因果关系”
+信息处理问题 对信息的变换</p></li>
+</ol>
+<p>def not : 𝔹 -&gt; 𝔹 = [b] match b {
+true =&gt; flse,
+flse =&gt; true,
+}</p>
+<ol start="5" type="1">
+<li><p>[b] 是 函数参数绑定，也就是 lambda 抽象
+lambda 抽象
+是 λ 演算中用来定义匿名函数的基本语法形式</p>
+<p>match 是 模式匹配表达式，类似 case / switch，但用于函数式语言里的代数数据类型
+表达式可以产生一个值</p>
+<p>模式子值：
+实际子值 一个实际值拆开内部的部分
+Some(3) 是实际值，3是实际子值</p>
+<p>因为模式匹配不是匹配代码文本，而是匹配运行时真正的值</p></li>
+</ol>
+<p>def ℕ : TYPE = {
+ctor zero : Self
+ctor succ : Self -&gt; Self
+}
+6. 本质 皮阿诺公理 定义自然数就需要
+zero 和 后继（succ）
+这个公理也成为 数学归纳法的基础（归纳公理）</p>
+<pre><code>满足这两个性质的集合 就是 N自然数集合
+
+self什么意思：定义内部用 Self 来指代当前正在定义的类型
+
+所以在这段语言中 self 就是N</code></pre>
+<ol start="7" type="1">
+<li><p>ctor 构造子 constructor<br />
+某个类型的值不是随便来的，而是由这个类型规定好的几种“造法”造出来的。每一种造法，就叫一个构造子</p>
+<p>构造子 规定 一个类型的值的 生成形式
+而这个 类型叫做 type<br />
+ctor zero succ 中的zero succ是构造子</p>
+<p>ctor 定义一个结构子</p></li>
+</ol>
+    <!-- <ol type="1">
+<li>笛卡尔积 是两个集合组成的有序数对
+X×Y={(x,y)∣x∈X, y∈Y}</li>
+</ol>
+<p>∀ (x, y) ∈ f, ∀ (u, v) ∈ f, x = u =&gt; y == v 唯一性</p>
+<ol start="2" type="1">
+<li><p>在 Haskell 中，“类型” 和 “集合” 是同义词</p></li>
+<li><p>g * f == g after f 右往左</p></li>
+<li><p>函数可以建模 “变换” 和 “因果关系”
+信息处理问题 对信息的变换</p></li>
+</ol>
+<p>def not : 𝔹 -&gt; 𝔹 = [b] match b {
+true =&gt; flse,
+flse =&gt; true,
+}</p>
+<ol start="5" type="1">
+<li><p>[b] 是 函数参数绑定，也就是 lambda 抽象
+lambda 抽象
+是 λ 演算中用来定义匿名函数的基本语法形式</p>
+<p>match 是 模式匹配表达式，类似 case / switch，但用于函数式语言里的代数数据类型
+表达式可以产生一个值</p>
+<p>模式子值：
+实际子值 一个实际值拆开内部的部分
+Some(3) 是实际值，3是实际子值</p>
+<p>因为模式匹配不是匹配代码文本，而是匹配运行时真正的值</p></li>
+</ol>
+<p>def ℕ : TYPE = {
+ctor zero : Self
+ctor succ : Self -&gt; Self
+}
+6. 本质 皮阿诺公理 定义自然数就需要
+zero 和 后继（succ）
+这个公理也成为 数学归纳法的基础（归纳公理）</p>
+<pre><code>满足这两个性质的集合 就是 N自然数集合
+
+self什么意思：定义内部用 Self 来指代当前正在定义的类型
+
+所以在这段语言中 self 就是N</code></pre>
+<ol start="7" type="1">
+<li><p>ctor 构造子 constructor<br />
+某个类型的值不是随便来的，而是由这个类型规定好的几种“造法”造出来的。每一种造法，就叫一个构造子</p>
+<p>构造子 规定 一个类型的值的 生成形式
+而这个 类型叫做 type<br />
+ctor zero succ 中的zero succ是构造子</p>
+<p>ctor 定义一个结构子</p></li>
+</ol> 这里是 Pandoc 从 Markdown 转换来的 HTML -->
+</article>
+        <!-- <article>
+    <header>
+        <h1>The First Time you met Haskell</h1>
+        <!-- The First Time you met Haskell 来自 Markdown 文件开头的 YAML front matter -->
+        <time datetime="2026-10-24">2026-10-24</time>
+        <!-- 2026-10-24 来自 site.hs 中 dateField 的定义 -->
+    </header>
+
+    <ol type="1">
+<li>笛卡尔积 是两个集合组成的有序数对
+X×Y={(x,y)∣x∈X, y∈Y}</li>
+</ol>
+<p>∀ (x, y) ∈ f, ∀ (u, v) ∈ f, x = u =&gt; y == v 唯一性</p>
+<ol start="2" type="1">
+<li><p>在 Haskell 中，“类型” 和 “集合” 是同义词</p></li>
+<li><p>g * f == g after f 右往左</p></li>
+<li><p>函数可以建模 “变换” 和 “因果关系”
+信息处理问题 对信息的变换</p></li>
+</ol>
+<p>def not : 𝔹 -&gt; 𝔹 = [b] match b {
+true =&gt; flse,
+flse =&gt; true,
+}</p>
+<ol start="5" type="1">
+<li><p>[b] 是 函数参数绑定，也就是 lambda 抽象
+lambda 抽象
+是 λ 演算中用来定义匿名函数的基本语法形式</p>
+<p>match 是 模式匹配表达式，类似 case / switch，但用于函数式语言里的代数数据类型
+表达式可以产生一个值</p>
+<p>模式子值：
+实际子值 一个实际值拆开内部的部分
+Some(3) 是实际值，3是实际子值</p>
+<p>因为模式匹配不是匹配代码文本，而是匹配运行时真正的值</p></li>
+</ol>
+<p>def ℕ : TYPE = {
+ctor zero : Self
+ctor succ : Self -&gt; Self
+}
+6. 本质 皮阿诺公理 定义自然数就需要
+zero 和 后继（succ）
+这个公理也成为 数学归纳法的基础（归纳公理）</p>
+<pre><code>满足这两个性质的集合 就是 N自然数集合
+
+self什么意思：定义内部用 Self 来指代当前正在定义的类型
+
+所以在这段语言中 self 就是N</code></pre>
+<ol start="7" type="1">
+<li><p>ctor 构造子 constructor<br />
+某个类型的值不是随便来的，而是由这个类型规定好的几种“造法”造出来的。每一种造法，就叫一个构造子</p>
+<p>构造子 规定 一个类型的值的 生成形式
+而这个 类型叫做 type<br />
+ctor zero succ 中的zero succ是构造子</p>
+<p>ctor 定义一个结构子</p></li>
+</ol>
+    <!-- <ol type="1">
+<li>笛卡尔积 是两个集合组成的有序数对
+X×Y={(x,y)∣x∈X, y∈Y}</li>
+</ol>
+<p>∀ (x, y) ∈ f, ∀ (u, v) ∈ f, x = u =&gt; y == v 唯一性</p>
+<ol start="2" type="1">
+<li><p>在 Haskell 中，“类型” 和 “集合” 是同义词</p></li>
+<li><p>g * f == g after f 右往左</p></li>
+<li><p>函数可以建模 “变换” 和 “因果关系”
+信息处理问题 对信息的变换</p></li>
+</ol>
+<p>def not : 𝔹 -&gt; 𝔹 = [b] match b {
+true =&gt; flse,
+flse =&gt; true,
+}</p>
+<ol start="5" type="1">
+<li><p>[b] 是 函数参数绑定，也就是 lambda 抽象
+lambda 抽象
+是 λ 演算中用来定义匿名函数的基本语法形式</p>
+<p>match 是 模式匹配表达式，类似 case / switch，但用于函数式语言里的代数数据类型
+表达式可以产生一个值</p>
+<p>模式子值：
+实际子值 一个实际值拆开内部的部分
+Some(3) 是实际值，3是实际子值</p>
+<p>因为模式匹配不是匹配代码文本，而是匹配运行时真正的值</p></li>
+</ol>
+<p>def ℕ : TYPE = {
+ctor zero : Self
+ctor succ : Self -&gt; Self
+}
+6. 本质 皮阿诺公理 定义自然数就需要
+zero 和 后继（succ）
+这个公理也成为 数学归纳法的基础（归纳公理）</p>
+<pre><code>满足这两个性质的集合 就是 N自然数集合
+
+self什么意思：定义内部用 Self 来指代当前正在定义的类型
+
+所以在这段语言中 self 就是N</code></pre>
+<ol start="7" type="1">
+<li><p>ctor 构造子 constructor<br />
+某个类型的值不是随便来的，而是由这个类型规定好的几种“造法”造出来的。每一种造法，就叫一个构造子</p>
+<p>构造子 规定 一个类型的值的 生成形式
+而这个 类型叫做 type<br />
+ctor zero succ 中的zero succ是构造子</p>
+<p>ctor 定义一个结构子</p></li>
+</ol> 这里是 Pandoc 从 Markdown 转换来的 HTML -->
+</article> 是 Hakyll 的占位符 -->
+        <!-- 编译时会被替换为实际内容 -->
+        <!-- 对于文章页：这里是渲染后的文章 HTML -->
+        <!-- 对于首页：这里是文章列表 -->
+    </main>
+
+    <footer>
+        <p>built with Haskll while studying Haskell</p>
+        <p>这个网站在github中是开源的，所以如果上传什么东西还是可以被别人访问我的仓库去看这个源代码
+            等后面我有需求了，可能会在GitHub上每月充值办一个upgraded
+            相当于现在这个是很多程序员可以看到我这个仓库并使用其中的内容，因为是一个public公开的仓库，可以以我的仓库为根基去干什么
+            不过暂时来看，这个仓库不具备什么应用价值，所以应该不会有很多人访问。
+        </p>
+    </footer>
+</body>
+</html>
