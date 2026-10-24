@@ -1,0 +1,25 @@
+body {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+
+header nav a {
+    margin-right: 1rem;
+    text-decoration: none;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+footer {
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    color: #999;
+    font-size: 0.85rem;
+}
